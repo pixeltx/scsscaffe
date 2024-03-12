@@ -1,0 +1,183 @@
+$paddingSize: 4px;
+$underlinecolor: sandybrown;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  margin-top: 8%;
+  background-color: #f6eada;
+  height: 460px;
+  position: relative;
+
+  .about {
+    position: absolute;
+    filter: saturate(3000%) sepia(60%) opacity(30%);
+    width: 100%;
+  }
+
+  .content-left {
+    @include flex-center();
+    width: 50%;
+
+    img {
+      width: 330px;
+      height: 470px;
+      position: relative;
+      margin-left: 8rem;
+      bottom: 15%;
+      border: 3px solid #fff;
+      border-radius: 15px;
+      box-shadow: 2px 2px 5px 5px rgba($color: #000, $alpha: 0.1);
+    }
+  }
+  .content-right {
+    padding-top: 5%;
+    padding-left: 2%;
+    width: 60%;
+    position: relative;
+
+    span {
+      text-decoration: underline $underlinecolor 3px;
+    }
+    h1 {
+      width: 300px;
+    }
+    h2 {
+      width: 275px;
+      margin-top: 3%;
+    }
+    p {
+      color: gray;
+      margin-top: 2%;
+      font-size: large;
+    }
+
+    button {
+      padding: ($paddingSize * 3) ($paddingSize * 7);
+      border-radius: 40px;
+      border: none;
+      color: $underlinecolor;
+      font-weight: 600;
+      background-color: #2f0106;
+      margin-top: 4%;
+      cursor: pointer;
+    }
+  }
+}
+
+.container2 {
+  h1 {
+    margin-left: 7%;
+    margin-top: 7%;
+    letter-spacing: 0.5px;
+
+    span {
+      border-bottom: 3px solid $underlinecolor;
+    }
+  }
+
+  .row {
+    display: flex;
+    justify-content: center;
+    gap: 3%;
+    margin-block: 3%;
+
+    .card {
+      width: 310px;
+      height: auto;
+      background-color: #fff;
+      border-radius: 10px;
+      padding: ($paddingSize * 5);
+      position: relative;
+      box-shadow: 1.5px 1.5px 5px 4px rgba($color: #000, $alpha: 0.1);
+
+      img {
+        width: 100%;
+        display: flex;
+        margin-inline: auto;
+        border-radius: 10px;
+      }
+
+      .rating-transparent {
+        width: 20%;
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: ($paddingSize);
+        border-radius: 40px;
+        position: absolute;
+        top: 8%;
+        left: 9%;
+
+        .rating {
+          width: 100%;
+          background-color: #fff;
+          @include flex-center();
+          position: relative;
+          padding: $paddingSize;
+          border-radius: 40px;
+
+          .rating-value {
+            font-size: 13px;
+            font-weight: 600;
+            text-align: center;
+          }
+
+          img {
+            width: 30%;
+          }
+        }
+      }
+
+      .card-title {
+        width: 100%;
+        padding-inline: ($paddingSize * 2);
+        padding-block: ($paddingSize * 3);
+
+        h5 {
+          font-size: 20px;
+          color: #463a24;
+          letter-spacing: 0.5px;
+
+          .price {
+            float: right;
+          }
+        }
+      }
+
+      .card-body {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 2%;
+
+        p {
+          color: gray;
+          font-size: 14px;
+        }
+
+        .cart {
+          background-color: #ff902a;
+          z-index: 1;
+          font-size: 25px;
+          width: 40px;
+          padding: $paddingSize;
+          height: 40px;
+          border-radius: 100%;
+          color: #fff;
+          @include flex-center();
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
